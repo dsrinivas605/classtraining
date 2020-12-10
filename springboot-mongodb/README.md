@@ -7,21 +7,21 @@
   - Install Docker-compose
  
 # Clone Springboot-mongodb application:
-    git clone https://github.com/Naresh240/docker.git
-    cd docker/springboot-mongodb-dockercompose
+    git clone https://github.com/dsrinivas605/classtraining.git
+    cd classtraining/springboot-mongodb-dockercompose
 # Build artifact
     mvn clean install -DskipTests=true
  
 # Build Docker Image
-    docker build -t naresh240/springboot-mongodb:latest .
+    docker build -t sduggi/springboot-mongodb:latest .
 # Docker login
-    docker login -u naresh240 -p
+    docker login -u sduggi -p
 # Push Docker image to Dockerhub
-    docker push naresh240/springboot-mongodb:latest
+    docker push sduggi/springboot-mongodb:latest
     
 # Deploy application with run command:
     docker run --name mymongodb -p 27017:27017 -d mongo
-    docker run --name springboot-mongodb --link mymongodb:mymongodb -p 8080:8080 -d naresh240/springboot-mongodb:latest
+    docker run --name springboot-mongodb --link mymongodb:mymongodb -p 8080:8080 -d sduggi/springboot-mongodb:latest
 # Use postman app and Add Employee data
 Check API: /addEmployee
 
@@ -29,7 +29,7 @@ Check API: /addEmployee
   
 In postman app keep Post method and give Json data by selecting Body --> raw (Json format)
 
-    {"id": "1001", "name": "Naresh", "departement": "Engineer"}
+    {"id": "1001", "name": "srinivas", "departement": "Engineer"}
     
 Check API:- /findAllEmployees
 
@@ -50,7 +50,7 @@ Check API: /addEmployee
   
 In postman app keep Post method and give Json data by selecting Body --> raw (Json format)
 
-    {"id": "1001", "name": "Naresh", "departement": "Engineer"}
+    {"id": "1001", "name": "srinivas", "departement": "Engineer"}
     
 Check API:- /findAllEmployees
 
